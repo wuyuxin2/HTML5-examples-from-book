@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>1.1</title>
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <style>
+      p {
+        border: medium solid black;
+        font-size: 20px;
+        height: 2em;
+        width: calc(80% - 100px);
+      }
+      span {
+        border: inherit;
+      }
+      tr > th{
+          text-align: left;
+          background-color: grey;
+          color: white;
+      }
+      tr > th:only-of-type {
+          text-align: center;
+          background-color: lightgrey;
+          color: grey;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="header">this is header</header>
+    <nav>
+        <h1>this is nav</h1>
+        <ul>
+            <li><a href="#header">header</a></li>
+            <li><a href="#article">article</a></li>
+            <li><a href="#footer">footer</a></li>
+        </ul>
+    </nav>
+    <input
+      tabindex="1"
+      lang="en"
+      id="top"
+      type="text"
+      accesskey="n"
+      spellcheck="true"
+    />
+    <input tabindex="2" type="text" accesskey="p" />
+    <input tabindex="-1" type="submit" value="submit" accesskey="s" />
+    <p contenteditable="true">asjdkhflkjshdfkjahd</p>
+    <p dir="ltr" title="dir属性">从<em>左</em>左到右</p>
+    <p dir="rtl">从<span>右</span>到左</p>
+    <br />
+    <span><s>s标签</s></span>
+    <br />
+    <p>
+      <strong>重要文字</strong><u>下划线</u
+      ><small>小号字体</small>H<sub>2</sub>O 2<sup>n</sup>
+    </p>
+    <code>this is code.</code>
+    <br />
+    this is varible <var>fruits</var>
+    <br />
+    this is output <samp>fruits</samp>
+    <br />
+    this is input <kbd>fruits</kbd>
+    <br />
+    <p><abbr title="中华人民共和国">中国</abbr></p>
+    <p><dfn title="apple">apple </dfn>is a kind of fruit.</p>
+    <p>
+      <q cite="www.baidu.com">baidu.com</q>
+      <ruby>汉<rp>(</rp><rt>han</rt><rp>)</rp></ruby>
+      <ruby>字<rp>(</rp><rt>zi</rt><rp>)</rp></ruby>
+      <br />
+    </p>
+    <article id="article" style="color: blue;">
+        <header>header</header>
+        <p>this is an article</p>
+        <footer>footer</footer>
+    </article>
+    <p dir="rtl">
+      <bdo dir="rtl">请从右往左看</bdo>
+    </p>
+    <p>i am an <mark>apple</mark>.</p>
+    <p>
+        <del>i can sea the see.</del>
+        <ins>i can see the sea.</ins>
+        <time datetime="15:00">3 o'clock</time>
+    </p>
+    <pre>
+        function(){
+            document.writeln("pre 标签");
+        };
+    </pre>
+
+    <ol type="I">
+        <li>apple</li>
+        <li>banana</li>
+        <li>peer</li>
+        <li>peach</li>
+    </ol>
+    <figure>
+        <figcaption>figure-title</figcaption>
+        <code>this is code.-------figure</code>
+    </figure>
+    <h1>this is h1</h1>
+    <p>
+        show the sections:
+    <section>
+        <h1>this is 1st h1</h1>
+        <section>
+            <h1>this is 2nd h1</h1>
+            <section>
+                <h1>this is 3rd h1</h1>
+            </section>
+        </section>
+    </section>
+    </p>
+    <details>
+        <summary>this is summary</summary>
+        this is details:
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </details>
+
+    <table>
+        <caption><strong>This is real caption</strong></caption>
+        <thead>
+            <tr>
+                <th colspan="3">this is title</th>
+            </tr>
+            <tr>
+                <th>first</th>
+                <th>second</th>
+                <th>third</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th>1sdasdfaf</th>
+                <td>2dasf</td>
+                <td>basdfas</td>
+            </tr>
+            <tr>
+                <th>afaasdfasds</th>
+                <td>basdfas</td>
+                <td>basdfas</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>first</th>
+                <th>second</th>
+                <th>third</th>
+            </tr>
+        </tfoot>
+        
+        
+    </table>
+
+    <a href="1.1.html#top">回到top</a>
+    <footer id="footer">
+        <adress>联系方式：@wuyuxin_0518@163.com</adress>
+    </footer>
+    <script>
+      function printHello(name) {
+        return "This is Script Print: hello " + name + "!";
+      }
+      document.writeln(printHello("wuyuxin"));
+    </script>
+  </body>
+</html>

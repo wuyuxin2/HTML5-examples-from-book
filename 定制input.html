@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>定制input</title>
+</head>
+<body>
+    <p>
+        <label for="name">name:
+            <input placeholder="enter your name" type="text" name="name" id="name" maxlength="10" size="20">
+        </label>
+    </p>
+    <p>
+        <label for="fruit">fruit:
+            <input list="fruitlist" type="fruit" name="fruit" id="fruit" value="apple">
+        </label>
+    </p>
+    <p>
+        <label for="intro">intro:
+            <textarea placeholder="introduce yourself" type="textarea" name="intro" id="intro"></textarea>
+        </label>
+    </p>
+    <datalist id="fruitlist">
+        <option value="Apple">refresh apple</option>
+        <option value="Banana" label="refresh banana">banana</option>
+    </datalist>
+    <p>
+        <label for="id">id:
+            <input type="text" name="id" id="id" maxlength="10" size="20" value="0001" readonly>
+        </label>
+    </p>
+    <p>
+        <label for="password">password:
+            <input type="password" name="password" id="password" placeholder="min 6 charactor">
+        </label>
+    </p>
+    <p>
+        <label for="price">price:
+            <input type="number" step="1" min="0" max="100" name="price" id="price" value="1">
+        </label>
+    </p>
+    <p>
+        <label for="range">range:1
+            <input type="range" name="range" id="range" value="1" step="1" min="1" max="100">100
+        </label>
+    </p>
+    <p>
+        <label for="checkbox">do you have 100$:
+            <input type="checkbox" name="checkbox" id="checkbox">
+        </label>
+    </p>
+    <fieldset>
+        <legend>Vote for your favourate fruit</legend>
+        <label for="apple">
+            <input type="radio" checked name="fave" id="apple" value="apple">apple
+        </label>
+        <label for="banana">
+            <input type="radio" name="fave" id="banana" value="banana">banana
+        </label>
+        <label for="orange">
+            <input type="radio" name="fave" id="orange" value="orange">orange
+        </label>
+    </fieldset>
+    <p>
+        <label for="email">Email:
+            <input type="email" name="email" id="email" placeholder="user@domain.com">
+        </label>
+    </p>
+    <p>
+        last buy date:<input type="date" name="date" id="date">
+    </p>
+    <p>
+        color:<input type="color" name="color" id="color">
+    </p>
+    <button type="submit">submit</button>
+    <p>
+        <label for="search">search:</label>
+        <input type="search" name="search" id="search">
+    </p>
+    <p>
+        <label for="hidden">hidden</label>
+        <input type="hidden" name="hidden" value="1234" style="border: 1px solid black;">
+    </p>
+    <p>
+        <input type="image" name="submit" id="image-button" src="submit.png">
+    </p>
+    <p>
+        <input type="file" name="filedata">
+    </p>
+</body>
+</html>
