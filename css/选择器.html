@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button:before{
+            content: "前";
+        }
+        .button:hover {
+            background-color:yellow;
+        }
+        .button:after{
+            content: "后";
+        }
+        button:default {
+            outline:medium solid red;
+        }
+        [type="text"] {
+            background-color: royalblue;
+        }
+        input:valid {
+            outline: medium solid greenyellow;
+        }
+        input:invalid {
+            outline: medium solid purple;
+        }
+        input:in-range {
+            background-color: greenyellow;
+        }
+        input:out-of-range {
+            background-color: grey;
+        }
+        button:active {
+            background-color: hotpink;
+        }
+        input:focus {
+            background-color: hotpink;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        <form action="post">
+            <p>
+                name:<input required type="text" name="name" id="name" placeholder="text">
+            </p>
+            <p>
+                password:<input required type="password" name="password" id="password" placeholder="password">
+            </p>
+            <p>
+                number:<input type="number" min="5" max="10" value="2">
+            </p>
+            <button class="submit">submit</button>
+            <button class="button">button</button>
+            <button class="button">button</button>
+        </form>
+    </p>
+    
+    
+</body>
+</html>
