@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float</title>
+    <style>
+      p.float {
+        float: left;
+        width: 40%;
+        word-wrap: break-word;
+        border: solid 1px black;
+        margin-right: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="float">
+      askjldjkarwbnmabljifhawieufjmsdnckajdkfhskahfbcsajkdhfiupwhqyetfiugaskdncdklsahfjsjdlfgsahlkfgjwearuijhf
+    </p>
+    <p class="float">
+      askjldjkarwbnmabljifhawieufjmsdnckajdkfhskahfbcsajkdhfiupwhqyetfiugaskdncdklsahfjsjdlfgsahlkfgjwearuijhf
+    </p>
+    <p>
+      askjldjkarwbnmabljifhawieufjmsdnckajdkfhskahfbcsajkdhfiupwhqyetfiugaskdncdklsahfjsjdlfgsahlkfgjwearuijhf
+    </p>
+    <p>
+      askjldjkarwbnmabljifhawieufjmsdnckajdkfhskahfbcsajkdhfiupwhqyetfiugaskdncdklsahfjsjdlfgsahlkfgjwearuijhf
+    </p>
+    <button>left</button>
+    <button>right</button>
+    <button>none</button>
+    <script>
+      var buttons = document.getElementsByTagName("button");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function(e) {
+          var float = document.getElementsByClassName("float");
+          for (var j = 0; j < float.length; j++) {
+              float[j].style.cssFloat = e.target.innerHTML
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
