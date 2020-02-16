@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>盒模型</title>
+    <style>
+        p {
+            width: 500px;
+            height: 100px;
+            border: 5px solid pink;
+            border-radius: 1em 4em 1em 4em;
+            padding: 5px 25px 5px 40px;
+            overflow: scroll;
+            word-wrap: break-word;
+            font-size: 24px;
+        }
+        .minmax {
+            min-width: 100px;
+            width: 50%;
+            max-width: 500px;
+            background: pink;
+            height: 100px;
+            text-align: center;
+            line-height: 100px;
+        }
+        .box {
+            margin: 5px;
+            background-color: pink;
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            font-weight: bolder;
+            color: honeydew;
+        }
+        :focus {
+            outline: 2px hotpink solid;
+        }
+    </style>
+</head>
+<body>
+    <p>
+        内边框asdfjnghqlaewjrfiuqwgerfuyawgfhjawgjfhgewhfgejwahgfjehwgfkljewhfliuwqeasdfasdfasdsadasdsadfasdfsadfsadfsasadfsadsda8u34wgefjkh
+    </p>
+    <div class="minmax">
+        min-width:100px;
+        max-width:500px;
+    </div>
+    <div class="box">1</div>
+    <div id="box2" class="box">2</div>
+    <div class="box">3</div>
+    <button>visible</button>
+    <button>collapse</button>
+    <button>hidden</button>
+    <div>collapse用于表格，不占位；但是用于其他元素，相当于hidden</div>
+    <div class="box" id="none" style="color: black;display: block">隐藏display:none</div>
+    <button id="toggle">toggle</button>
+    <script>
+        var buttons = document.getElementsByTagName("button");
+        for( var i = 0; i < buttons.length; i++){
+            buttons[i].onclick = function(e) {
+                document.getElementById("box2").style.visibility = e.target.innerHTML;
+            }
+        }
+        var toggle = document.getElementById("toggle");
+        var none = document.getElementById("none");
+        toggle.onclick = function(){
+            if(none.style.display == "block")
+                none.style.display = "none"
+            else
+                none.style.display = "block" 
+        }
+    </script>
+</body>
+</html>
