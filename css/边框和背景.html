@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>边框和背景                      </title>
+    <style>
+        div {
+            width: 200px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            margin: 5px;
+        }
+        .dashed {
+            border-style: dashed;
+            border: 1px dashed black;
+        }
+        .doted {
+            border: 1px dotted black;
+        }
+        .radius {
+            border-top-left-radius: 25px;
+            border: 2px solid black;
+        }
+        .first {
+            border-radius: 15px / 25px;
+            border: 2px solid black;
+        }
+        .second {
+            border-radius: 50% 25px 25% 4em / 50% 50px 10% 20px;
+            border: 2px solid black;
+        }
+        .bg {
+            border: 2px solid black;
+            background-color: pink;
+            background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1581873617176&di=75f6015ec6b63615126f34846723c011&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F45193654a794e11be0d8b644e6990c883c77b3f3527b-qt2oJq_fw658);
+            background-repeat: repeat-x;
+            background-size: 20px 20px;
+        }
+        .bg1 {
+            border: 2px solid black;
+            background-color: pink;
+            background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1581873617176&di=75f6015ec6b63615126f34846723c011&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F45193654a794e11be0d8b644e6990c883c77b3f3527b-qt2oJq_fw658);
+            background-size: cover;
+        }
+        .bg2 {
+            border: 2px solid black;
+            background-color: pink;
+            background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1581873617176&di=75f6015ec6b63615126f34846723c011&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F45193654a794e11be0d8b644e6990c883c77b3f3527b-qt2oJq_fw658);
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+        .bg3 {
+            border: 2px solid black;
+            background-color: pink;
+            background-image: url(https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1581873617176&di=75f6015ec6b63615126f34846723c011&imgtype=0&src=http%3A%2F%2Fhbimg.b0.upaiyun.com%2F45193654a794e11be0d8b644e6990c883c77b3f3527b-qt2oJq_fw658);
+            background-size: 20px 20px;
+            background-repeat: no-repeat;
+            background-position: bottom;
+        }
+        .shadow {
+            border: 2px solid pink;
+            box-shadow: 5px 4px 10px 2px pink, 4px 4px 6px pink inset;
+        }
+    </style>
+</head>
+<body>
+    <div class="dashed">dashed</div>
+    <div class="doted">dotted</div>
+    <div class="radius">border-radius</div>
+    <div class="first">水平半径和垂直半径分开</div>
+    <div class="second">随意使用百分号和单位</div>
+    <div class="bg">background-*</div>
+    <div class="bg1">background-size: cover</div>
+    <div class="bg2">background-size: contain</div>
+    <div class="bg3">background-position:bottom</div>
+    <div class="shadow">box-shadow</div>
+</body>
+</html>
