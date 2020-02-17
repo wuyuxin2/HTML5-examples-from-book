@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p id="ele1">asdklhfasdhf;aksdjfklads</p>
+    <p id="ele2">sadfhasdkjfhaskdljhcj</p>
+    <script>
+        document.writeln("<pre>HTML URL:" + document.URL);
+        var eles = document.getElementsByTagName("p");
+        for(var i = 0; i < eles.length; i++) {
+            document.writeln("Element ID:" 
+            + eles[i].id)
+            eles[i].style.border = "medium solid black";
+            eles[i].padding = "4px";
+        }
+        document.writeln("</pre>")
+
+        document.writeln("<pre><strong>document元函数</strong>");
+        document.writeln("characterSet:" + document.characterSet);
+        document.writeln("charset:" + document.charset);
+        document.writeln("compatMode:" + document.compatMode);
+        document.writeln("defaultCharset:" + document.defaultCharset);
+        document.writeln("dir:" + document.dir);
+        document.writeln("domain:" + document.domain);
+        document.writeln("lastModified:" + document.lastModified);
+        document.writeln("referred:" + document.referrer);
+        document.writeln("title:" + document.title);
+        document.writeln("</pre>");
+
+        document.writeln("<pre><strong>Location对象</strong>");
+        document.writeln("protocol:" + document.location.protocol);
+        document.writeln("host:" + document.location.host);
+        document.writeln("hostname:" + document.location.hostname);
+        document.writeln("port:" + document.location.port);
+        document.writeln("pathname:" + document.location.pathname);
+        document.writeln("search:" + document.location.search);
+        document.writeln("hash:" + document.location.hash);
+        document.writeln("</pre>");
+    </script>
+</body>
+</html>
