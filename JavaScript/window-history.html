@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History对象</title>
+</head>
+<body>
+    <button>back</button>
+    <button>forward</button>
+    <button id="go">go</button>
+    <script>
+        var buttons = document.getElementsByTagName("button");
+        for (var i = 0; i < buttons.length; i++){
+            buttons[i].onclick = function(e){
+                if(e.target.innerHTML == "back"){
+                    window.history.back();
+                }else if(e.target.innerHTML == "forward"){
+                    window.history.forward();
+                }else if(e.target.id == "go"){
+                    window.history.go("http://www.baidu.com");
+                }
+            }
+        }
+    </script>
+</body>
+</html>

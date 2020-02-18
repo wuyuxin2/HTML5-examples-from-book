@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在URL中插入条目</title>
+  </head>
+  <body>
+    <p id="msg"></p>
+    <button id="banana">banana</button>
+    <button id="orange">orange</button>
+
+    <script>
+      var none = "nothing selected";
+      if (window.location.search == "?banana") none = "selection: banana";
+      if (window.location.search == "?orange") none = "selection: orange";
+      document.getElementById("msg").innerHTML = none;
+
+      var buttons = document.getElementsByTagName("button");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function(e) {
+          document.getElementById("msg").innerHTML = e.target.innerHTML;
+          if (window.history && window.history.pushState)
+            window.history.pushState = ("", "", "?" + e.target.id);
+          else {
+            document.writeln("不支持pushState");
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
