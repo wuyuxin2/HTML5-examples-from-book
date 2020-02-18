@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>计时器</title>
+  </head>
+  <body>
+    <p id="msg"></p>
+    <button id="settime">set time</button>
+    <button id="cleartime">clear time</button>
+    <button id="setinterval">set interval</button>
+    <button id="clearinterval">clear interval</button>
+
+    <script>
+      var buttons = document.getElementsByTagName("button");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function handleButtonPress(e) {
+          if (e.target.id == "settime") {
+            timeId = window.setTimeout(function() {
+              displayMsg("setTimeout");
+            }, 1000);
+          } else if (e.target.id == "setinterval") {
+            intervalId = window.setInterval(function() {
+              displayMsg("setInterval, count:" + count++);
+            }, 2000);
+          } else if (e.target.id == "cleartime") {
+            window.clearTimeout(timeId);
+            displayMsg("clearTimeout");
+          } else if (e.target.id == "clearinterval") {
+            window.clearInterval(intervalId);
+            displayMsg("clearInterval");
+          }
+        };
+      }
+
+      var timeId;
+      var intervalId;
+      var count = 0;
+
+      function displayMsg(msg) {
+        
+        document.getElementById("msg").innerHTML = msg;
+      }
+    </script>
+  </body>
+</html>
