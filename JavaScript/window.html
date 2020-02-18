@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Window对象</title>
+  </head>
+  <body>
+    <h2>1. window交互</h2>
+    <button>scroll</button>
+    <button>close</button>
+    <button>print</button>
+    <p>
+      2 月 8 日，苹果又发布了一份声明称，苹果公司在中国的办公场所和客服中心在 2
+      月 10 日当周恢复运转；但同时苹果的零售店依旧延期开放，恢复运营时间待定。
+      到了 2 月 13 日，苹果官网显示，位于北京的官方零售店将在 2 月 14
+      日重新开张，营业时间为 11 时到 18
+      时，与之前正常营业时间相比大幅缩短——目前，官网显示的这一营业时间已经持续至
+      2 月 24 日。
+      与此同时，在北京之外，苹果在其他城市的官方零售店显示依然处于关闭状态。
+      当然，在容易发生感染的实体零售店关闭的同时，苹果依旧没有停止线上商店的零售工作，第三方网上商店也在继续售卖。
+      但实际上，Apple Store
+      起到的不仅仅是零售作用，也有产品展示和售后服务的作用，因此可以想见其对消费者的影响。
+      1 月 29 日，来自天风国际的知名分析师郭明錤在其《肺炎疫情对 Apple
+      供应端和需求端的潜在风险之情境分析》中认为，iPhone 和其他 Apple
+      产品需求可能会因消费者信心下滑而低于预期。
+      郭明錤还认为，人们为了防止感染肺炎而佩戴口罩，这将造成 Face ID
+      无法运作而不利于使用体验——因此若肺炎疫情在近期没能够得到改善，可能会对既有
+      iOS 的用户体验有负面影响。 到了 2 月 2
+      日，郭明錤再次发布报告，宣布下调其对 2020 年 Q1 的 iPhone 出货量预期约
+      10%，也就是 3600 至 4000万部，而 2019 年 Q1 同比为 3800 万部。
+      而根据市场调研机构 Strategy Analytics 和 IDC
+      发布的预测报告，中国智能手机市场将在 2020 年第一季度下滑
+      30%，苹果作为中国智能手机市场的重要一员，自然要不可避免地裹挟其中。
+    </p>
+    <p><h2>2. Window对象</h2></p>
+    <table border="1">
+      <tr>
+        <td>outWidth:</td>
+        <td id="outWidth"></td>
+      </tr>
+      <tr>
+        <td>outHeight:</td>
+        <td id="outHeight"></td>
+      </tr>
+    </table>
+
+    <p><h2>3. 用户提示</h2></p>
+    <button>alert</button>
+    <button>comfirm</button>
+    <button>prompt</button>
+    <button>modalDialog</button>
+
+    <script>
+      document.getElementById("outWidth").innerHTML = window.outerWidth;
+      document.getElementById("outHeight").innerHTML = window.outerHeight;
+
+      // 与窗口交互
+      var buttons = document.getElementsByTagName("button");
+      for (var i = 0; i < buttons.length; i++) {
+        buttons[i].onclick = function(e) {
+          if (e.target.innerHTML == "scroll") {
+            window.scroll(0, 400);
+          } else if (e.target.innerHTML == "close") {
+            window.close();
+          } else if (e.target.innerHTML == "print") {
+            window.print();
+          }
+        };
+      }
+
+      // 用户提示
+      for (var i = 3; i < 8; i++) {
+          buttons[i].onclick = function(e) {
+            if (e.target.innerHTML == "alert") {
+                window.alert("This is an alert");
+            } else if (e.target.innerHTML == "comfirm") {
+                var comfirmed = window.comfirm("This is a comfirm - do you want to proceed?")
+                window.alert("Comfirm?" + comfirmed)
+            } else if (e.target.innerHTML == "prompt") {
+                var response = window.prompt("Enter a world", "Hello");
+                window.alert("The word is " + response);
+            } else if(e.target.modalDialog) {
+                window.showModalDialog("www.baidu.com");
+            }
+        }
+      }
+    </script>
+  </body>
+</html>
