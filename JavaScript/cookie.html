@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie</title>
+</head>
+<body>
+    <p id="cookiedata"></p>
+    <button id="write">add cookie</button>
+    <button id="update">update cookie</button>
+    <script>
+        var cookieCount = 0;
+        document.getElementById("update").onclick = updateCookie;
+        document.getElementById("write").onclick = createCookie;
+        readCookies();
+        function readCookies(){
+            document.getElementById("cookiedata").innerHTML = document.cookie;
+        }
+        function createCookie(){
+            cookieCount++;
+            document.cookie = "Cookie_" + cookieCount + "=value_" + cookieCount;
+            readCookies();
+        }
+        function updateCookie(){
+            document.cookie = "Cookie_" + cookieCount + "update_" + cookieCount;
+            readCookies();
+        }
+    </script>
+</body>
+</html>
