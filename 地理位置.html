@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <td id="longitude"></td>
+            <td id="latitude"></td>
+        </tr>
+        <tr>
+            <td id="altitude"></td>
+            <td id="accuracy"></td>
+        </tr>
+        <tr>
+            <td id="altitudeAccuracy"></td>
+            <td id="heading"></td>
+        </tr>
+        <tr>
+            <td id="speed"></td>
+            <td id="timestamp"></td>
+        </tr>
+    </table>
+    <script>
+        navigator.geolocation.getCurrentPosition(displayPosition);
+        function displayPosition(pos){
+            var properties = ["longitude", "latitude", "altitude", "accuracy", "altitudeAccuracy", "heading", "speed"];
+            for (var i =0; i<properties.length; i++){
+                var value = pos.coords[properties[i]];
+                document.getElementById(properties[i]).innerHTML = value;
+            }
+            document.getElementById("timestamp").innerHTML = pos.timestamp;
+        }
+    </script>
+</body>
+</html>
