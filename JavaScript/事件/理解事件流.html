@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>理解事件流</title>
+    <style>
+      p {
+        border: thick solid black;
+        background: pink;
+      }
+      span {
+        background: #000;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <p id="text">
+      题哈色风景看啦还是看大家发过哈就耳边仿佛从v将卡是否来得及咖啡<span
+        id="banana"
+        >banana</span
+      >将卡黑色短发i哦芦荟润肺爱u是个好地方iu阿尔维
+    </p>
+
+    <script>
+      var banana = document.getElementById("banana");
+      var text = document.getElementById("text");
+
+      banana.addEventListener("mouseover", handleMouseEvent);
+      banana.addEventListener("mouseout", handleMouseEvent);
+      text.addEventListener("mouseover", handleDecendantEvent, true);
+      text.addEventListener("mouseout", handleDecendantEvent, true);
+      text.addEventListener("mouseover", handleBubbleEvent, false);
+      text.addEventListener("mouseout", handleBubbleEvent, false);
+
+      function handleBubbleEvent(e) {
+        if (e.type == "mouseover") e.target.style.textTransform = "uppercase";
+        else e.target.style.textTransform = "none";
+      }
+
+      function handleDecendantEvent(e) {
+        if (e.type == "mouseover" && e.eventPhase == Event.CAPTURING_PHASE) {
+          e.target.style.border = "1px solid purple";
+          e.currentTarget.style.color = "green";
+        } else {
+          e.target.style.removeProperty("border");
+          e.currentTarget.style.removeProperty("color");
+        }
+
+        // 阻止事件流前进
+        //e.stopPropagation();
+      }
+      function handleMouseEvent(e) {
+        if (e.type == "mouseover") {
+          e.target.style.background = "white";
+          e.target.style.color = "black";
+        } else {
+          e.target.style.removeProperty("background");
+          e.target.style.removeProperty("color");
+        }
+      }
+    </script>
+  </body>
+</html>

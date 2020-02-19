@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>简单事件处理器</title>
+  </head>
+  <body>
+    <p
+      onmouseover="this.style.background='pink'"
+      onmouseout="this.style.removeProperty('background')"
+    >
+      onmouseover
+    </p>
+    <p onmouseover="handleMouseOver(this)" onmouseout="handleMouseOut(this)">
+      函数事件处理
+    </p>
+    <input type="text" name="" id="" />
+
+    <script>
+        function handleMouseOver(elem){
+            elem.style.background="black";
+            elem.style.color="white";
+        }
+        function handleMouseOut(elem){
+            elem.style.removeProperty('background');
+            elem.style.removeProperty("color");
+        }
+
+
+        // addEventListener("mouseover", handleMouseOver)
+        // 优点：可以访问某些高级事件特性
+    </script>
+  </body>
+</html>

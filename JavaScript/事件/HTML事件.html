@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML事件</title>
+    <style>
+      #mouseEventExample {
+        width: 100%;
+        height: 100px;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <p>文档和窗口事件：Document对象</p>
+    <p>鼠标事件：MouseEvent对象</p>
+    <div id="mouseEventExample"></div>
+    <table border="1">
+      <tr>
+        <td>event:</td>
+        <td id="event"></td>
+      </tr>
+      <tr>
+        <td>ClientX:</td>
+        <td id="x"></td>
+      </tr>
+      <tr>
+        <td>ClientY:</td>
+        <td id="y"></td>
+      </tr>
+    </table>
+
+    <p>键盘焦点事件：onfocus/onblur</p>
+    <form action="" id="form">
+      <p>name: <input type="text" id="nm" /></p>
+      <p>password: <input type="password" id="pwd" /></p>
+    </form>
+
+    <script>
+      // MouseEvent
+      var area = document.getElementById("mouseEventExample");
+      var event = document.getElementById("event");
+      var x = document.getElementById("x");
+      var y = document.getElementById("y");
+
+      area.addEventListener("mouseover", handleMouseEvent, false);
+      area.addEventListener("mouseout", handleMouseEvent, false);
+      area.addEventListener("mousemove", handleMouseEvent, false);
+
+      function handleMouseEvent(e) {
+        if (e.eventPhase == Event.AT_TARGET) {
+          event.innerHTML = e.type;
+          x.innerHTML = e.clientX;
+          y.innerHTML = e.clientY;
+        }
+      }
+
+      // 键盘焦点
+      var nm = document.getElementById("nm");
+      var pwd = document.getElementById("pwd");
+
+      nm.onfocus = handleFocusEvent;
+      nm.onblur = handleFocusEvent;
+      pwd.onfocus = handleFocusEvent;
+      pwd.onblur = handleFocusEvent;
+
+      function handleFocusEvent(e) {
+        if (e.type == "focus") {
+          e.target.style.background = "red";
+          e.target.style.color = "white";
+        } else {
+          e.target.style.removeProperty("background");
+        }
+      }
+    </script>
+  </body>
+</html>
