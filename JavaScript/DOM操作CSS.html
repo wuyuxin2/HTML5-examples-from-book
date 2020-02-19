@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM操作CSS</title>
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <style title="corestyle">
+      p {
+        color: blueviolet;
+        border: 2px solid palevioletred;
+        border-radius: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <p>There are many kinds of fruits,like apples, banana, watermelon.</p>
+    <div id="placeholder"></div>
+    <button id="toggle">toggle css</button>
+
+    <script>
+      var sheets = document.styleSheets;
+      var placeholder = document.getElementById("placeholder");
+
+      for (var i = 0; i < sheets.length; i++) {
+        var newElem = document.createElement("table");
+        newElem.setAttribute("border", "1");
+        addRow(newElem, "index", i);
+        addRow(newElem, "href", sheets[i].href);
+        addRow(newElem, "title", sheets[i].title);
+        addRow(newElem, "type", sheets[i].type);
+        addRow(newElem, "ownerNode", sheets[i].ownerNode.tagName);
+        placeholder.appendChild(newElem);
+      }
+
+      function addRow(elem, head, value) {
+        elem.innerHTML +=
+          "<tr><th>" + head + ":</th><td>" + value + "</td></tr>";
+      }
+
+      // toggle css
+      document.getElementById("toggle").onclick = function(){
+          document.styleSheets[0].disabled = !document.styleSheets[0].disabled;
+      }
+    </script>
+  </body>
+</html>
