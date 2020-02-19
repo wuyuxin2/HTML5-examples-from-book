@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>插入元素</title>
+  </head>
+  <body>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>
+            Fruit
+          </th>
+          <th>
+            Color
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr id="targetRow">
+          <td>Placeholder</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+        <button id="ab">afterbegin</button>
+        <button id="ae">afterend</button>
+        <button id="bb">beforebegin</button>
+        <button id="be">beforeend</button>
+    </p>
+
+    <script>
+        document.getElementsByTagName("button").onclick = function(e){
+            if(e.target.id == "ab")
+                e.target.insertAdjacentHTML("afterbegin", "<td>after begin</td>");
+        }
+    </script>
+  </body>
+</html>
