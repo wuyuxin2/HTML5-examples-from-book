@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义属性</title>
+</head>
+<body>
+    <p id="text" class="fruit" data-fruit="apple" data-size="circle">apple is a kind of fruit.</p>
+    <pre id="result"></pre>
+    <script>
+        var result = document.getElementById("result");
+        var elem = document.getElementById("text");
+        for (var attr in elem.dataset) {
+            result.innerHTML += attr + "\n";
+        }
+        result.innerHTML += "Value of data-fruit: " + elem.dataset["fruit"];
+    </script>
+</body>
+</html>
