@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text方法</title>
+</head>
+<body></body>
+    <p id="text">this is an <strong>apple</strong>.</p>
+    <pre id="result"></pre>
+    <button id="press">press</button>
+
+    <script>
+        var elem = document.getElementById("text");
+        var result = document.getElementById("result");
+        document.getElementById("press").onclick = function(){
+            result.innerHTML = "This elem has " + elem.firstChild.length + ".";
+        }
+
+    </script>
+</body>
+</html>

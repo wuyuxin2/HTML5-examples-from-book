@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>createElement</title>
+    <style>
+      table {
+        float: left;
+        margin: 5px;
+      }
+      p {
+        clear: left;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="fruitTable" border="1">
+      <tr>
+        <td>apple</td>
+        <td>red</td>
+      </tr>
+    </table>
+
+    <table id="table" border="1">
+      <tr>
+        <td>apple</td>
+        <td>red</td>
+      </tr>
+    </table>
+
+    <pre id="result"></pre>
+
+    <p>
+      <button id="add">add elem</button>
+      <button id="remove">remove elem</button>
+      <button id="move">move elem</button>
+      <button id="compareElem">compare elem(isSameNode)</button>
+      <button id="isEqualNode">isEqualNode</button>
+    </p>
+
+    <script>
+      var fruitTable = document.getElementById("fruitTable");
+      document.getElementById("add").onclick = function() {
+        var row = document.createElement("tr");
+        row.setAttribute("id", "newrow");
+        row
+          .appendChild(document.createElement("td"))
+          .appendChild(document.createTextNode("banana"));
+        row
+          .appendChild(document.createElement("td"))
+          .appendChild(document.createTextNode("yellow"));
+        fruitTable.appendChild(row);
+      };
+      document.getElementById("remove").onclick = function() {
+        var row = document.getElementById("newrow");
+        row.parentNode.removeChild(row);
+      };
+
+      // move
+      document.getElementById("move").onclick = function() {
+        var table = document.getElementById("table");
+        var elem = document.getElementById("newrow");
+        table.appendChild(elem);
+      };
+
+      // compare elem
+      document.getElementById("compareElem").onclick = function() {
+        if (
+          document
+            .getElementById("fruitTable")
+            .isSameNode(document.getElementById("table"))
+        )
+          document.getElementById("result").innerHTML = "Same";
+        else document.getElementById("result").innerHTML = "Not Same";
+      };
+      document.getElementById("isEqualNode").onclick = function() {
+        if (
+          document
+            .getElementById("fruitTable")
+            .isEqualNode(document.getElementById("table"))
+        )
+          document.getElementById("result").innerHTML = "Same";
+        else document.getElementById("result").innerHTML = "Not Same";
+      };
+
+
+      // outerHTML包括标签
+      // innerHTML只是标签内文本
+    </script>
+  </body>
+</html>
