@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>基本网格布局</title>
+    <style>
+      .Grid {
+        display: flex;
+      }
+      .Grid-cell {
+        flex: 1;
+        background-color: lightblue;
+        margin: 2px;
+      }
+      .Grid-cell.u-full {
+        flex: 0 0 100%;
+      }
+      .Grid-cell.u-lof2 {
+        flex: 0 0 50%;
+      }
+      .Grid-cell.u-lof3 {
+        flex: 0 0 33.3333333%;
+      }
+      .Grid-cell.u-lof4 {
+        flex: 0 0 25%;
+      }
+
+      /* 圣杯布局 */
+      .HolyGrail {
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+      }
+      header,
+      footer {
+        flex: 1;
+        background-color: #888;
+      }
+      .HolyGrail-body {
+        display: flex;
+        flex: 1;
+      }
+      .HolyGrail-content {
+        flex: 1;
+        background-color: pink;
+      }
+      .HolyGrail-nav,
+      .HolyGrail-ads {
+        flex: 0 0 12em;
+        background-color: tomato;
+      }
+      .HolyGrail-nav {
+        order: -1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="Grid">
+      <div class="Grid-cell u-lof4">...</div>
+      <div class="Grid-cell">...</div>
+      <div class="Grid-cell u-lof3">...</div>
+    </div>
+
+    <div class="HolyGrail">
+      <header>header</header>
+      <div class="HolyGrail-body">
+        <main class="HolyGrail-content">main</main>
+        <nav class="HolyGrail-nav">nav</nav>
+        <aside class="HolyGrail-ads">aside</aside>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>
